@@ -22,11 +22,11 @@ To run your tests
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
-#### Reverse An Array
+### Reverse An Array
 
-##### Whiteboard Process
+#### Whiteboard Process
 ![whiteboard](https://github.com/KimrAndrew/data-structures-and-algorithms/blob/array-reverse/imgs/Reverse%20Array.png)
 
-##### Approach and Efficiency
+#### Approach and Efficiency
 Big O for both time and space efficiency is O(n)
   - Takes in the given array and returns a new array in reverse order
