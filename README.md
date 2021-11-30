@@ -23,4 +23,4 @@ To run your tests
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
 
 #### Array-Reverse
-[!whiteboard](https://github.com/KimrAndrew/data-structures-and-algorithms/blob/array-reverse/imgs/Reverse%20Array.png)
+![whiteboard](https://github.com/KimrAndrew/data-structures-and-algorithms/blob/array-reverse/imgs/Reverse%20Array.png)
