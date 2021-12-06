@@ -9,3 +9,12 @@ class Linked_List():
 
     def insert(self,data) -> None:
         self.head = Node(data,self.head)
+
+    def contains(self,search) -> bool:
+        
+        current = self.head
+        while not current is None:
+            if current.data == search:
+                return True
+            current = current.next
+        return False
