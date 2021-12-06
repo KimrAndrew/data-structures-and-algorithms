@@ -18,4 +18,5 @@ def test_create_empty_linked_list():
 def test_insert_node():
     l_list = Linked_List()
     l_list.insert(5)
-    assert l_list.head.data == 5
+    l_list.insert(7)
+    assert l_list.head.data == 7

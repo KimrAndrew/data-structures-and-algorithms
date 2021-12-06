@@ -6,3 +6,6 @@ class Node():
 class Linked_List():
     def __init__(self) -> None:
         self.head = None
+
+    def insert(self,data) -> None:
+        self.head = Node(data,self.head)
