@@ -20,3 +20,21 @@ def test_insert_node():
     l_list.insert(5)
     l_list.insert(7)
     assert l_list.head.data == 7
+
+def test_contains_true():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    assert l_list.contains(12) is True
+
+def test_contains_false():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    assert l_list.contains(15) is False
