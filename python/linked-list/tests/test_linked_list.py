@@ -38,3 +38,16 @@ def test_contains_false():
     l_list.insert(19)
     l_list.insert(31)
     assert l_list.contains(15) is False
+
+def test_str():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    assert str(l_list) == '{31} -> {19} -> {12} -> {7} -> {5} -> NONE'
+
+def test_empty_list_str():
+    l_list = Linked_List()
+    assert str(l_list) == "NONE"
