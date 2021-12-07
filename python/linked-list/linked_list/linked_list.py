@@ -41,13 +41,13 @@ class Linked_List():
             insert = Node(new_value,current)
             self.head = insert
             return
-        while current is not None:
+        while current.next is not None:
             if current.next.data == value:
                 insert = Node(new_value,current.next)
                 current.next = insert
                 return
             current = current.next
-        return
+        raise ValueError("Value not found")
     
     def __str__(self) -> str:
         s = ''

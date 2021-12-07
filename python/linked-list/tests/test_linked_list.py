@@ -94,3 +94,9 @@ def test_insert_before_head():
     l_list.insert_before(5,3)
     assert l_list.get_index(0) == 3
 
+def test_value_not_found_raises_error():
+    l_list = Linked_List()
+    l_list.insert(5)
+    with pytest.raises(ValueError):
+        l_list.insert_before(10,7)
+
