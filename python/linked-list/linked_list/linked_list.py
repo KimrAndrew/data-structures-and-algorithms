@@ -36,6 +36,7 @@ class Linked_List():
             i += 1
 
     def insert_before(self,value,new_value):
+        self.empty_head_raises_exception()
         current = self.head
         if current.data == value:
             insert = Node(new_value,current)
@@ -48,6 +49,26 @@ class Linked_List():
                 return
             current = current.next
         raise ValueError("Value not found")
+
+    def insert_after(self,value,new_value):
+        self.empty_head_raises_exception
+        current = self.head
+        while current is not None:
+            if current.data == value:
+                insert = Node(new_value, current.next)
+                current.next = insert
+                return
+            current = current.next
+        raise ValueError("Value not found")
+
+    def append(self, value):
+        current = self.head
+        if current is None:
+            self.head = Node(value)
+            return
+        while current.next is not None:
+            current = current.next
+        current.next = Node(value)
     
     def __str__(self) -> str:
         s = ''
@@ -57,3 +78,7 @@ class Linked_List():
             current = current.next
         s += 'NONE'
         return s
+    
+    def empty_head_raises_exception(self):
+        if self.head == None:
+            raise ValueError("Head empty")
