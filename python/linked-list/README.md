@@ -53,3 +53,15 @@ Write the following methods for the Linked List class:
 - insert after
   - arguments: value, new value
   - adds a new node with the given new value immediately after the first node that has the value specified
+
+## Approach & Efficiency
+Built using TDD workflow of writing the tests before creating the methods being tested
+  - append:
+    - Time: O(N)
+    - Space: O(N)
+  - insert_before:
+    - Time: O(N)
+    - Space: O(N)
+  - insert_after:
+    - Time: O(N)
+    - Space: O(N)
