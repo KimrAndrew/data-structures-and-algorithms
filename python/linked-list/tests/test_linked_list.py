@@ -77,7 +77,7 @@ def test_get_index():
     assert l_list.get_index(4) == 5
     assert l_list.get_index(2) == 12
 
-@pytest.mark.skip("To do")
+
 def test_insert_before_last_item():
     l_list = Linked_List()
     l_list.insert(5)
@@ -86,4 +86,11 @@ def test_insert_before_last_item():
     l_list.insert(19)
     l_list.insert(31)
     l_list.insert_before(5,10)
-    assert get_index(4) == 10
+    assert l_list.get_index(4) == 10
+
+def test_insert_before_head():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert_before(5,3)
+    assert l_list.get_index(0) == 3
+

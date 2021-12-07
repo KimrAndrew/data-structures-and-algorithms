@@ -12,7 +12,7 @@ class Linked_List():
 
     def contains(self,search) -> bool:  
         current = self.head
-        while not current is None:
+        while current is not None:
             if current.data == search:
                 return True
             current = current.next
@@ -34,6 +34,20 @@ class Linked_List():
                 return current.data
             current = current.next
             i += 1
+
+    def insert_before(self,value,new_value):
+        current = self.head
+        if current.data == value:
+            insert = Node(new_value,current)
+            self.head = insert
+            return
+        while current is not None:
+            if current.next.data == value:
+                insert = Node(new_value,current.next)
+                current.next = insert
+                return
+            current = current.next
+        return
     
     def __str__(self) -> str:
         s = ''
