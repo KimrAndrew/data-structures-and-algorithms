@@ -22,8 +22,8 @@ class Linked_List():
         current = self.head
         i = 0
         while i <= search_index:
-            if current.data is None:
-                raise IndexError('Index is out of bounds')
+            if current is None:
+                raise IndexError('Index out of bounds')
             if i == search_index:
                 return current.data
             current = current.next
