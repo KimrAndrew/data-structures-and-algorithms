@@ -1,4 +1,4 @@
-import linked_list
+import linked_list, pytest
 from linked_list.linked_list import Node, Linked_List
 
 def test_node():
@@ -51,3 +51,24 @@ def test_str():
 def test_empty_list_str():
     l_list = Linked_List()
     assert str(l_list) == "NONE"
+
+def test_get_index():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    assert l_list.get_index(4) == 5
+    assert l_list.get_index(2) == 12
+
+@pytest.mark.skip("To do")
+def test_insert_before_last_item():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    l_list.insert_before(5,10)
+    assert get_index(4) == 10

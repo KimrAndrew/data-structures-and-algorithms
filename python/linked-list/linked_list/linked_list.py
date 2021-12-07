@@ -17,6 +17,17 @@ class Linked_List():
                 return True
             current = current.next
         return False
+
+    def get_index(self,search_index):
+        current = self.head
+        i = 0
+        while i <= search_index:
+            if current.data is None:
+                raise IndexError('Index is out of bounds')
+            if i == search_index:
+                return current.data
+            current = current.next
+            i += 1
     
     def __str__(self) -> str:
         s = ''
