@@ -12,11 +12,63 @@ class Linked_List():
 
     def contains(self,search) -> bool:  
         current = self.head
-        while not current is None:
+        while current is not None:
             if current.data == search:
                 return True
             current = current.next
         return False
+
+    def get_index(self,search_index):
+        if type(search_index) is not int:
+            raise TypeError("Search Index must be of type int")
+
+        if search_index < -1:
+            raise IndexError('Search Index must be a positive integer')
+
+        current = self.head
+        i = 0
+        while i <= search_index:
+            if current is None:
+                raise IndexError('Index out of bounds')
+            if i == search_index:
+                return current.data
+            current = current.next
+            i += 1
+
+    def insert_before(self,value,new_value):
+        self.empty_head_raises_exception()
+        current = self.head
+        if current.data == value:
+            insert = Node(new_value,current)
+            self.head = insert
+            return
+        while current.next is not None:
+            if current.next.data == value:
+                insert = Node(new_value,current.next)
+                current.next = insert
+                return
+            current = current.next
+        raise ValueError("Value not found")
+
+    def insert_after(self,value,new_value):
+        self.empty_head_raises_exception
+        current = self.head
+        while current is not None:
+            if current.data == value:
+                insert = Node(new_value, current.next)
+                current.next = insert
+                return
+            current = current.next
+        raise ValueError("Value not found")
+
+    def append(self, value):
+        current = self.head
+        if current is None:
+            self.head = Node(value)
+            return
+        while current.next is not None:
+            current = current.next
+        current.next = Node(value)
     
     def __str__(self) -> str:
         s = ''
@@ -26,3 +78,7 @@ class Linked_List():
             current = current.next
         s += 'NONE'
         return s
+    
+    def empty_head_raises_exception(self):
+        if self.head == None:
+            raise ValueError("Head empty")
