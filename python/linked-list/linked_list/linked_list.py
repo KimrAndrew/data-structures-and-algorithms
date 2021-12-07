@@ -19,6 +19,12 @@ class Linked_List():
         return False
 
     def get_index(self,search_index):
+        if type(search_index) is not int:
+            raise TypeError("Search Index must be of type int")
+
+        if search_index < -1:
+            raise IndexError('Search Index must be a positive integer')
+
         current = self.head
         i = 0
         while i <= search_index:

@@ -52,6 +52,11 @@ def test_empty_list_str():
     l_list = Linked_List()
     assert str(l_list) == "NONE"
 
+def test_get_index_no_int_raises_exception():
+    l_list = Linked_List()
+    with pytest.raises(TypeError):
+        l_list.get_index('a')
+
 def test_get_index_out_of_bounds_raises_exception():
     l_list = Linked_List()
     l_list.insert(5)
