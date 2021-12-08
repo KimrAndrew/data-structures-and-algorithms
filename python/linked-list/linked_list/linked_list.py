@@ -78,6 +78,21 @@ class Linked_List():
             current = current.next
         s += 'NONE'
         return s
+
+    def kth_from_end(self,k):
+        if k < 0:
+            raise IndexError('k must be a positive int value')
+        self.empty_head_raises_exception()
+        output = self.head
+        look_ahead = self.head
+        for _ in range(0,k-1):
+            look_ahead = look_ahead.next
+            if look_ahead is None:
+                raise IndexError("No kth from end index")
+        while look_ahead.next is not None:
+            output = output.next
+            look_ahead = look_ahead.next
+        return output.data
     
     def empty_head_raises_exception(self):
         if self.head == None:
