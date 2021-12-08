@@ -38,7 +38,7 @@
 - to string:
   - Time: O(N)
   - Space: O(N)
-  
+
 ## Linked List Insertions
 
 ## Feature Tasks
@@ -55,13 +55,30 @@ Write the following methods for the Linked List class:
   - adds a new node with the given new value immediately after the first node that has the value specified
 
 ## Approach & Efficiency
+
 Built using TDD workflow of writing the tests before creating the methods being tested
-  - append:
-    - Time: O(N)
-    - Space: O(N)
-  - insert_before:
-    - Time: O(N)
-    - Space: O(N)
-  - insert_after:
-    - Time: O(N)
-    - Space: O(N)
+- append:
+  - Time: O(N)
+  - Space: O(N)
+- insert_before:
+  - Time: O(N)
+  - Space: O(N)
+- insert_after:
+  - Time: O(N)
+  - Space: O(N)
+
+## Kth_From_End
+
+kth from end
+
+- argument: a number, k, as a parameter.
+- Return the node’s value that is k places from the tail of the linked list.
+You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Approach & Efficiency
+
+- kth_from_end:
+  - uses a for loop to push a look ahead k nodes in front of Node who's value will eventually be returned (initialized at the head of the list) then uses a while loop to push the reference to the look ahead node and the reference to the output Node to the end of the list
+  - basically uses k to determine how far from the head the look ahead Node needs to be  initialized to
+  - Space: O(N)
+  - Time: O(N)

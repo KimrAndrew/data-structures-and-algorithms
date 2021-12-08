@@ -120,3 +120,54 @@ def test_append_to_empty():
     l_list.append(1)
     assert l_list.get_index(0) == 1
 
+def test_kth_from_end_middle_value():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    expected = 12
+    actual = l_list.kth_from_end(3)
+    assert actual == expected
+    
+def test_k_greater_than_length():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    with pytest.raises(IndexError):
+        l_list.kth_from_end(6)
+
+def test_k_negative_value():
+    l_list = Linked_List()
+    with pytest.raises(IndexError):
+        l_list.kth_from_end(-1)
+
+def test_k_equals_length():
+    l_list = Linked_List()
+    l_list.insert(5)
+    l_list.insert(7)
+    l_list.insert(12)
+    l_list.insert(19)
+    l_list.insert(31)
+    expected = 31
+    actual = l_list.kth_from_end(5)
+    assert actual == expected
+
+def test_k_equals_0():
+    l_list = Linked_List()
+    l_list.append(5)
+    l_list.append(4)
+    expected = 4
+    actual = l_list.kth_from_end(0)
+    return expected == actual
+
+def kth_from_end_on_length_one():
+    l_list = Linked_List()
+    l_list.append(1)
+    expected = 1
+    actual = l_list.kth_from_end(0)
+    assert expected == actual
