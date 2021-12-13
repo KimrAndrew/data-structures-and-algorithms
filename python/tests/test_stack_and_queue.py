@@ -100,4 +100,8 @@ def test_queue_dequeue():
     dequeued = queue.dequeue().value
     expected = 1
     assert dequeued == expected
-    
+
+def test_queue_dequeue_on_empty_raises_exception():
+    queue = Queue()
+    with pytest.raises(OverflowError):
+        queue.dequeue()
