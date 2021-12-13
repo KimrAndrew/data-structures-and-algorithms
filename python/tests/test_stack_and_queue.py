@@ -1,3 +1,4 @@
+import pytest
 from stack_and_queue.stack_and_queue import Node, Stack
 
 def test_node_exists():
@@ -18,4 +19,10 @@ def test_stack_push():
     stack.push(5)
     actual = stack._top.value
     expected = 5
+    assert actual == expected
+
+def test_stack_is_empty():
+    stack = Stack()
+    actual = stack.is_empty()
+    expected = True
     assert actual == expected
