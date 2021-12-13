@@ -5,4 +5,6 @@ class Node():
 
 class Stack():
     def __init__(self,_top=None) -> None:
-        self._top = _top
+        self._top = _top    
+    def push(self, value):
+        self._top = Node(value, self._top)
