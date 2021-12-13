@@ -66,6 +66,6 @@ def test_queue_exists():
 def test_queue_enqueue():
     queue = Queue()
     queue.enqueue(1)
-    actual = queue._front.value
+    front = queue._front.value
     expected = 1
     assert actual == expected
