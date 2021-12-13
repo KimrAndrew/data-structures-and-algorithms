@@ -91,3 +91,13 @@ def test_queue_is_not_empty():
     actual = queue.is_empty()
     expected = False
     assert actual == expected
+
+def test_queue_dequeue():
+    queue = Queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    dequeued = queue.dequeue()
+    expected = 1
+    assert dequeued == expected
+    
