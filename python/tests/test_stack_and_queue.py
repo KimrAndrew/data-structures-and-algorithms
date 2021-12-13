@@ -40,4 +40,4 @@ def test_stack_pop():
     stack.push(2)
     stack.push(3)
     popped = stack.pop()
-    assert popped == 3 and stack._top == 2
+    assert popped == 3 and stack._top.value == 2
