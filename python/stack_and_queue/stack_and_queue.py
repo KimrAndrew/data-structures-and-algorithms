@@ -24,3 +24,6 @@ class Stack():
         if self.is_empty():
             raise OverflowError("Cannot peek on empty Stack")
         return self._top.value
+
+class Queue():
+    pass
