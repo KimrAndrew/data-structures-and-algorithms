@@ -1,5 +1,5 @@
 import pytest
-from stack_and_queue.stack_and_queue import Node, Stack
+from stack_and_queue.stack_and_queue import Node, Stack, Queue
 
 def test_node_exists():
     assert Node(5)
@@ -59,3 +59,6 @@ def test_stack_peek_on_empty_raises_exception():
     stack = Stack()
     with pytest.raises(OverflowError):
         stack.peek()
+
+def test_queue_exists():
+    assert Queue()
