@@ -78,3 +78,9 @@ def test_queue_enqueue_multiple_values():
     front = queue._front.value
     expected = 1
     assert front == expected
+
+def test_queue_is_empty():
+    queue = Queue()
+    actual = queue.is_empty()
+    expected = True
+    assert actual == expected
