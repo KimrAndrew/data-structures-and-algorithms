@@ -26,4 +26,5 @@ class Stack():
         return self._top.value
 
 class Queue():
-    pass
+    def __init__(self,_front=None):
+        self._front = _front
