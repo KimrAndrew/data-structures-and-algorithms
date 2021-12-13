@@ -1,0 +1,1 @@
+![white board](https://github.com/KimrAndrew/data-structures-and-algorithms/blob/stack-and-queue/python/stack_and_queue/white_boards/Untitled.jpg)
