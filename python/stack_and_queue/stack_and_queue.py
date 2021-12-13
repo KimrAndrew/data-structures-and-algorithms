@@ -28,3 +28,6 @@ class Stack():
 class Queue():
     def __init__(self,_front=None):
         self._front = _front
+
+    def enqueue(self,value):
+        self._front = Node(value,self._front)
