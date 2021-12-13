@@ -15,5 +15,7 @@ class Stack():
 
     def pop(self):
         popped = self._top
+        if popped is None:
+            raise OverflowError("Cannot pop on empty Stack")
         self._top = self._top.next
         return popped.value
