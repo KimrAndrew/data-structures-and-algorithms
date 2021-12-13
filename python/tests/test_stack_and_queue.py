@@ -46,3 +46,11 @@ def test_stack_pop_on_empty_raises_exception():
     stack = Stack()
     with pytest.raises(OverflowError):
         stack.pop()
+
+def test_stack_peek():
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    assert stack.peek() == 2
+    stack.pop()
+    assert stack.peek() == 1
