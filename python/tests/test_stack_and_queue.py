@@ -114,3 +114,8 @@ def test_queue_peek():
     actual = queue.peek()
     expected = 1
     assert actual == expected
+
+def test_queue_peek_on_empty_raises_exception():
+    queue = Queue()
+    with pytest.raises(OverflowError):
+        queue.peek()
