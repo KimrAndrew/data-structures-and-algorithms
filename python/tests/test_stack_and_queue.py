@@ -16,6 +16,6 @@ def test_stack_exists():
 def test_stack_push():
     stack = Stack()
     stack.push(5)
-    actual = Stack._top.value
+    actual = stack._top.value
     expected = 5
     assert actual == expected
