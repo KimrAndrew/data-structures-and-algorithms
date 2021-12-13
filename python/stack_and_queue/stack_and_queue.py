@@ -40,4 +40,12 @@ class Queue():
 
     def is_empty(self):
         return self._front is None
+
+    def dequeue(self):
+        if self.is_empty():
+            raise OverflowError("Cannot dequeue from empty queue")
+        dequeued = self._front
+        self._front = self._front.next
+        return dequeued
+
         
