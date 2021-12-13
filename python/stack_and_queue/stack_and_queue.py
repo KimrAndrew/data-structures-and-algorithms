@@ -9,3 +9,6 @@ class Stack():
     
     def push(self, value):
         self._top = Node(value, self._top)
+
+    def is_empty(self):
+        return self._top is None
