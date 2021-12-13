@@ -48,4 +48,9 @@ class Queue():
         self._front = self._front.next
         return dequeued.value
 
+    def peek(self):
+        if self.is_empty():
+            raise OverflowError("Cannot peek on empty Queue")
+        return self._front.value
+
         
