@@ -97,7 +97,7 @@ def test_queue_dequeue():
     queue.enqueue(1)
     queue.enqueue(2)
     queue.enqueue(3)
-    dequeued = queue.dequeue()
+    dequeued = queue.dequeue().value
     expected = 1
     assert dequeued == expected
     
