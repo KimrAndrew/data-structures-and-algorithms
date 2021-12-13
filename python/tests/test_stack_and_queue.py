@@ -12,3 +12,10 @@ def test_node_has_next():
 
 def test_stack_exists():
     assert Stack()
+
+def test_stack_push():
+    stack = Stack()
+    stack.push(5)
+    actual = Stack._top.value
+    expected = 5
+    assert actual == expected
