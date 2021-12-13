@@ -41,3 +41,8 @@ def test_stack_pop():
     stack.push(3)
     popped = stack.pop()
     assert popped == 3 and stack._top.value == 2
+
+def test_stack_pop_on_empty_raises_exception():
+    stack = Stack()
+    with pytest.raises(OverflowError):
+        stack.pop()
