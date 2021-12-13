@@ -46,6 +46,6 @@ class Queue():
             raise OverflowError("Cannot dequeue from empty Queue")
         dequeued = self._front
         self._front = self._front.next
-        return dequeued
+        return dequeued.value
 
         
