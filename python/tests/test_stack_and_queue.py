@@ -54,3 +54,8 @@ def test_stack_peek():
     assert stack.peek() == 2
     stack.pop()
     assert stack.peek() == 1
+
+def test_stack_peek_on_empty_raises_exception():
+    stack = Stack()
+    with pytest.raises(OverflowError):
+        stack.peek()
