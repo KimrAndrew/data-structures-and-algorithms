@@ -26,8 +26,9 @@ class Stack():
         return self._top.value
 
 class Queue():
-    def __init__(self,_front=None):
+    def __init__(self,_front=None,_rear=None):
         self._front = _front
+        self._rear = _rear
 
     def enqueue(self,value):
         self._front = Node(value,self._front)
