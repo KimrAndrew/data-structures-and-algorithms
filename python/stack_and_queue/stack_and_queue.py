@@ -12,3 +12,8 @@ class Stack():
 
     def is_empty(self):
         return self._top is None
+
+    def pop(self):
+        popped = self._top
+        self._top = self._top.next
+        return popped.value
