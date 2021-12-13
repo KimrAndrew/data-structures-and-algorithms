@@ -19,3 +19,8 @@ class Stack():
             raise OverflowError("Cannot pop on empty Stack")
         self._top = self._top.next
         return popped.value
+
+    def peek(self):
+        if self.is_empty():
+            raise OverflowError("Cannot peek on empty Stack")
+        return self._top.value
