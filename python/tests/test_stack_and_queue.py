@@ -62,3 +62,10 @@ def test_stack_peek_on_empty_raises_exception():
 
 def test_queue_exists():
     assert Queue()
+
+def test_queue_enqueue():
+    queue = Queue()
+    queue.enqueue(1)
+    actual = queue._front
+    expected = 1
+    assert actual == expected
