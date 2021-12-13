@@ -1,4 +1,4 @@
-from stack_and_queue.stack_and_queue import Node
+from stack_and_queue.stack_and_queue import Node, Stack
 
 def test_node_exists():
     assert Node(5)
@@ -9,3 +9,6 @@ def test_node_has_next():
     actual = node_one.next.value
     expected = 2
     assert actual == expected
+
+def test_stack_exists():
+    assert Stack()
