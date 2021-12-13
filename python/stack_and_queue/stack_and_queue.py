@@ -31,4 +31,10 @@ class Queue():
         self._rear = _rear
 
     def enqueue(self,value):
-        self._front = Node(value,self._front)
+        if self._rear is None:
+            self._front = Node(value,self._front)
+            self._rear = self._front
+            return
+        self._rear.next = Node(value)
+        self._rear = self._rear.next
+        
