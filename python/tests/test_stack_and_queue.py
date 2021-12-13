@@ -68,7 +68,7 @@ def test_queue_enqueue():
     queue.enqueue(1)
     front = queue._front.value
     expected = 1
-    assert actual == expected
+    assert front == expected
 
 def test_queue_enqueue_multiple_values():
     queue = Queue()
