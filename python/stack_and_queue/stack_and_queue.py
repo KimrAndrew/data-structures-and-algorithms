@@ -4,5 +4,5 @@ class Node():
         self.next = next
 
 class Stack():
-    def __init__(self) -> None:
-        pass
+    def __init__(self,_top=None) -> None:
+        self._top = _top
