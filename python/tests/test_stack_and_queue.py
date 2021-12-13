@@ -33,3 +33,11 @@ def test_stack_is_not_empty():
     actual = stack.is_empty()
     expected = False
     assert actual == expected
+
+def test_stack_pop():
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    popped = stack.pop()
+    assert popped == 3 and stack._top == 2
