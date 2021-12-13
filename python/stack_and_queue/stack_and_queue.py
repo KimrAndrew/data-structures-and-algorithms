@@ -37,4 +37,7 @@ class Queue():
             return
         self._rear.next = Node(value)
         self._rear = self._rear.next
+
+    def is_empty(self):
+        return self._front is None
         
