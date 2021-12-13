@@ -26,3 +26,10 @@ def test_stack_is_empty():
     actual = stack.is_empty()
     expected = True
     assert actual == expected
+
+def test_stack_is_not_empty():
+    stack = Stack()
+    stack.push(1)
+    actual = stack.is_empty()
+    expected = False
+    assert actual == expected
