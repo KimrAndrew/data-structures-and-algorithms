@@ -18,7 +18,7 @@ class Queue():
             flipped_stack.push(Node(value))
 
         while not holding_stack.is_empty():
-            flipped_stack.push(holding_stack.pop())
+            flipped_stack.push(Node(holding_stack.pop()))
 
         flipped_stack.push(Node(value))
 
@@ -32,6 +32,6 @@ class Queue():
             flipped_stack = self._stack_two
     
         while not holding_stack.is_empty():
-            flipped_stack.push(holding_stack.pop())
+            flipped_stack.push(Node(holding_stack.pop()))
 
-        return flipped_stack.pop()
+        return flipped_stack.pop().value
