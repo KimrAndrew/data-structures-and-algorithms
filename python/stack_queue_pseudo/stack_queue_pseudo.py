@@ -21,4 +21,17 @@ class Queue():
             flipped_stack.push(holding_stack.pop())
 
         flipped_stack.push(Node(value))
-        
+
+    def dequeue(self):
+        if self._stack_one.is_empty():
+            flipped_stack = self._stack_one
+            holding_stack = self._stack_two
+
+        else:
+            holding_stack = self._stack_one
+            flipped_stack = self._stack_two
+    
+        while not holding_stack.is_empty():
+            flipped_stack.push(holding_stack.pop())
+
+        return flipped_stack.pop()
