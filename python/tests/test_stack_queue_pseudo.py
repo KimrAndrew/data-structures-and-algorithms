@@ -11,4 +11,13 @@ def test_enqueue_one():
     actual = pq._stack_one.peek().value
     assert expected == actual
 
+def test_enqueue_three():
+    pq = Queue()
+    pq.enqueue(1)
+    pq.enqueue(2)
+    pq.enqueue(3)
 
+    expected = 3
+    actual = pq._stack_one.peek().value
+
+    assert actual == expected
