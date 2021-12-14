@@ -8,7 +8,7 @@ def test_enqueue_one():
     pq.enqueue(1)
 
     expected = 1
-    actual = pq._stack_one.peek()
+    actual = pq._stack_one.peek().value
     assert expected == actual
 
 
