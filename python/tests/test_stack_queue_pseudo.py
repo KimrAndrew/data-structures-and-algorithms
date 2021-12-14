@@ -21,3 +21,12 @@ def test_enqueue_three():
     actual = pq._stack_one.peek().value
 
     assert actual == expected
+
+def test_dequeue_one():
+    queue = Queue()
+    queue.enqueue(1)
+    queue.enqueue(2)
+    queue.enqueue(3)
+    actual = Queue.dequeue()
+    expected = 1
+    assert actual == expected
