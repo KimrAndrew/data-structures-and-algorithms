@@ -1,4 +1,5 @@
 from stack_queue_pseudo.stack_queue_pseudo import Queue
+import pytest
 
 def test_import():
     assert Queue()
@@ -22,6 +23,7 @@ def test_enqueue_three():
 
     assert actual == expected
 
+@pytest.mark.skip("TODO")
 def test_dequeue_one():
     queue = Queue()
     queue.enqueue(1)
