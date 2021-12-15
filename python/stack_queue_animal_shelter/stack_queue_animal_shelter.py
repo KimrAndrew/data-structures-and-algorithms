@@ -10,3 +10,7 @@ class Dog(Animal):
 class Cat(Animal):
     def __str__(self):
         return 'Cat'
+
+class PlaceHolder():
+    def __str__(self):
+        return "PlaceHolder"
