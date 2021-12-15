@@ -16,4 +16,6 @@ class PlaceHolder():
         return "PlaceHolder"
 
 class AnimalShelter():
-    pass
+    
+    def __init__(self):
+        self.line = Queue()
