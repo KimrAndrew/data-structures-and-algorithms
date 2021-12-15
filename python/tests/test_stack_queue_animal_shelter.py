@@ -42,3 +42,15 @@ def test_dequeue_first_cat():
     shelter.line.dequeue()
     shelter.line.dequeue()
     assert shelter.line.is_empty()
+
+def test_dequeue_not_first_cat():
+    shelter = AnimalShelter()
+    shelter.enqueue(Dog())
+    shelter.enqueue(Dog())
+    shelter.enqueue(Cat())
+    shelter.enqueue(Dog())
+    assert isinstance(shelter.dequeue('cat'),Cat)
+    shelter.line.dequeue()
+    shelter.line.dequeue()
+    shelter.line.dequeue()
+    assert shelter.line.is_empty()
