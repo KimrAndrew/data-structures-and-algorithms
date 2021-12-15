@@ -25,3 +25,10 @@ def test_enqueue_to_empty():
     shelter.enqueue(Cat())
     dq = shelter.line.dequeue()
     assert isinstance(dq,Cat)
+
+def test_enqueue_to_nonempty():
+    shelter = AnimalShelter()
+    shelter.enqueue(Cat())
+    shelter.enqueue(Dog())
+    assert isinstance(shelter.line.dequeue(),Cat)
+    assert isinstance(shelter.line.dequeue(),Dog)
