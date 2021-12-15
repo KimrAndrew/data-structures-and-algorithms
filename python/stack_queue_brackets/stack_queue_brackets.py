@@ -20,9 +20,10 @@ def recursive_validate(unchecked_stack: Stack,checked_stack: Stack) -> bool:
     if unchecked_stack.is_empty():
         return True
     elif unchecked_stack.peek() in CLOSING_CHARS:
-        checked_stack.push(unchecked_stack.pop())
-        return recursive_validate(unchecked_stack,checked_stack)
-    #only an issue when invalid brackets
+            checked_stack.push(unchecked_stack.pop())
+            return recursive_validate(unchecked_stack,checked_stack)
+    # # only an issue when invalid brackets
+    # # just makes sure recursion doesn't break
     elif checked_stack.is_empty():
         checked_stack.push(unchecked_stack.pop())
     else:
@@ -38,12 +39,3 @@ def validate_brackets(String: str) -> bool:
     checked_stack = Stack()
     return recursive_validate(unchecked_stack,checked_stack)
 
-assert validate_brackets('()[[EXTRA CHARACTERS]])')
-assert validate_brackets(f'{{}}')
-assert validate_brackets(f'{{}}(){{}}')
-assert validate_brackets(f'(){{}}[[]]')
-assert validate_brackets(f'{{}}{{Code}}[Fellows](())')
-assert not validate_brackets(f'[({{}}]')
-assert not validate_brackets(f'[({{}}]')
-assert not validate_brackets('(](')
-assert not validate_brackets(f'{{(}})')
