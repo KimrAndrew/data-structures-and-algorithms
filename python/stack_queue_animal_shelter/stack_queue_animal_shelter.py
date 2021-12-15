@@ -19,3 +19,6 @@ class AnimalShelter():
     
     def __init__(self):
         self.line = Queue()
+        
+    def enqueue(self,value):
+        self.line.enqueue(value)
