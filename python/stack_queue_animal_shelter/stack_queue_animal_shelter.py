@@ -14,3 +14,6 @@ class Cat(Animal):
 class PlaceHolder():
     def __str__(self):
         return "PlaceHolder"
+
+class AnimalShelter():
+    pass
