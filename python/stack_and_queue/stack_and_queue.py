@@ -52,5 +52,3 @@ class Queue():
         if self.is_empty():
             raise OverflowError("Cannot peek on empty Queue")
         return self._front.value
-
-        
