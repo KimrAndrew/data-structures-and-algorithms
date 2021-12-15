@@ -11,3 +11,11 @@ def test_cat():
 
 def test_animal():
     assert Animal()
+
+def test_dog_is_animal():
+    dog = Dog()
+    assert isinstance(dog,Animal)
+
+def test_cat_is_animal():
+    cat = Cat()
+    assert isinstance(cat,Animal)
