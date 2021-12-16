@@ -38,4 +38,3 @@ def validate_brackets(String: str) -> bool:
     unchecked_stack = push_chars_to_stack(String)
     checked_stack = Stack()
     return recursive_validate(unchecked_stack,checked_stack)
-
