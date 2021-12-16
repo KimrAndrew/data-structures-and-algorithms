@@ -120,11 +120,3 @@ def test_queue_peek_on_empty_raises_exception():
     with pytest.raises(OverflowError):
         queue.peek()
 
-def test_dequeue_one():
-    queue = Queue()
-    queue.enqueue(1)
-    queue.enqueue(2)
-    queue.enqueue(3)
-    actual = Queue.dequeue()
-    expected = 1
-    assert actual == expected
