@@ -1,19 +1,19 @@
 from typing import List
 from trees.trees import BinaryTree
-from stack_and_queue.stack_and_queue import Queue
+from collections import deque
 
 def breadth_first(tree:BinaryTree) -> list:
-    q = Queue()
+    q = deque()
     output = []
     if tree.root is None:
         return output
-    q.enqueue(tree.root)
-    while not q.is_empty():
-        temp = q.dequeue()
+    q.appendleft(tree.root)
+    while len(q) > 0:
+        temp = q.pop()
         if temp.left is not None:
-            q.enqueue(temp.left)
+            q.appendleft(temp.left)
         if temp.right is not None:
-            q.enqueue(temp.right)
+            q.appendleft(temp.right)
         output.append(temp.value)
     return output
     
