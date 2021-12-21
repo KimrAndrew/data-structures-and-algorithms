@@ -6,6 +6,12 @@ def test_empty():
     tree = BinaryTree()
     assert breadth_first(tree) == []
 
+def test_root_only():
+    tree = BinaryTree(BTreeNode('A'))
+    actual =  breadth_first(tree)
+    expected = ['A']
+    assert actual == expected
+
 
 @pytest.fixture
 def three_high_tree():
