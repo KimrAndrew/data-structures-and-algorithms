@@ -12,6 +12,28 @@ def test_root_only():
     expected = ['A']
     assert actual == expected
 
+def test_two_high_left_only():
+    tree = BinaryTree(BTreeNode('A'))
+    tree.root.left = BTreeNode('B')
+    expected = ['A',"B"]
+    actual = breadth_first(tree)
+    assert actual == expected
+
+def test_two_high_right_only():
+    tree = BinaryTree(BTreeNode('A'))
+    tree.root.right = "B"
+    expected = ['A',"B"]
+    actual = breadth_first(tree)
+    assert actual == expected
+
+def test_two_high_balanced():
+    tree = BinaryTree(BTreeNode('A'))
+    tree.root.left = BTreeNode('B')
+    tree.root.right = BTreeNode('C')
+    expected = ['A','B','C']
+    actual = breadth_first(tree)
+    assert actual == expected
+
 
 @pytest.fixture
 def three_high_tree():
