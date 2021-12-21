@@ -10,3 +10,4 @@ def test_all():
     assert not validate_brackets(f'[({{}}]')
     assert not validate_brackets('(](')
     assert not validate_brackets(f'{{(}})')
+    assert not validate_brackets('][')
