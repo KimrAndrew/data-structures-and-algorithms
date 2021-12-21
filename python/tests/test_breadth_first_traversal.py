@@ -21,7 +21,7 @@ def test_two_high_left_only():
 
 def test_two_high_right_only():
     tree = BinaryTree(BTreeNode('A'))
-    tree.root.right = "B"
+    tree.root.right = BTreeNode('B')
     expected = ['A',"B"]
     actual = breadth_first(tree)
     assert actual == expected
