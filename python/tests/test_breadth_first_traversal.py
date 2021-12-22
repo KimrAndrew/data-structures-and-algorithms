@@ -1,3 +1,4 @@
+from abc import ABC
 from trees.trees import BinaryTree, BTreeNode
 from breadth_first_traversal.breadth_first_traversal import breadth_first
 import pytest
@@ -34,15 +35,16 @@ def test_two_high_balanced():
     actual = breadth_first(tree)
     assert actual == expected
 
-
-@pytest.fixture
-def three_high_tree():
+def test_three_high():
     tree = BinaryTree(BTreeNode('A'))
     left = BTreeNode('B')
-    left.left = BTreeNode('D')
-    left.right = BTreeNode('E')
+    left.left = BTreeNode('C')
+    left.right = BTreeNode('D')
     tree.root.left = left
-    right = BTreeNode('C')
+    right = BTreeNode('E')
     right.left = BTreeNode('F')
     tree.root.right = right
-    return tree
+    
+    expected = ['A','B','E','C','D','F']
+    actual = breadth_first(tree)
+    assert actual == expected
