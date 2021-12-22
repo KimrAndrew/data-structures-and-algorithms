@@ -2,6 +2,8 @@
 
 ## Whiteboard Process
 
+![Whiteboard](https://github.com/KimrAndrew/data-structures-and-algorithms/blob/main/python/imgs/Code-Challenge-17%20(2).jpg)
+
 ## Approach and Efficiency
 
 - Algorithm uses a queue to deconstruct the tree in the correct order
