@@ -27,6 +27,6 @@ def test_create_binary():
     tree.add(4)
     tree.add(5)
     tree.add(6)
-    output = tree.breadth_first_to_list()
-    print(output)
-    assert 3 ==2
+    actual = tree.breadth_first_to_list()
+    expected = [1,2,3,4,5,6]
+    assert actual == expected
