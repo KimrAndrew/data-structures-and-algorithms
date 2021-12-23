@@ -1,4 +1,4 @@
-from trees.trees import KAryTree, KTreeNode, breadth_first
+from trees.trees import KAryTree, KTreeNode
 
 # def test_tree_add():
 #     tree = KAryTree(3)
@@ -43,7 +43,7 @@ def test_breadth_first():
     tree.root.connections[0].connections = third_level_left
     tree.root.connections[1].connections =  third_level_mid
     tree.root.connections[2].connections = third_level_right
-    breadth_first(tree,12)
+    tree.breadth_first(12)
     actual = tree.root.connections[0].connections[0].connections[0].value
     expected = 12
     #print([connection.value for connection in tree.root.connections[0].connections])

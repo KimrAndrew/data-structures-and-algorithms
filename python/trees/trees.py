@@ -77,20 +77,20 @@ class KAryTree():
 
     #     find_open_spot(self.root)
     #def add(tree:KAryTree):
-def breadth_first(tree:KAryTree,to_add) -> list:
-    q = deque()
-    if tree.root is None:
-        tree.root = KTreeNode(tree.k, to_add)
-    q.appendleft(tree.root)
-    temp = None
-    while len(q) > 0:
-        temp = q.pop()
-        if len(temp.connections) < tree.k:
-            print(temp.value)
-            print(temp.connections)
-            temp.connections.append(KTreeNode(tree.k,to_add))
-            return
-        for connection in temp.connections:
-            q.appendleft(connection)
-    
-    return
+    def breadth_first(self,to_add) -> None:
+        q = deque()
+        if self.root is None:
+            self.root = KTreeNode(self.k, to_add)
+        q.appendleft(self.root)
+        temp = None
+        while len(q) > 0:
+            temp = q.pop()
+            if len(temp.connections) < self.k:
+                print(temp.value)
+                print(temp.connections)
+                temp.connections.append(KTreeNode(self.k,to_add))
+                return
+            for connection in temp.connections:
+                q.appendleft(connection)
+        
+        return
