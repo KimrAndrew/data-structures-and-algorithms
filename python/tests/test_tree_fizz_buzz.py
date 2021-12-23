@@ -1,7 +1,7 @@
-from trees.trees import KAryTree, KTreeNode
+from trees.trees import KTree, KTreeNode
 
 def test_breadth_first():
-    tree = KAryTree(3)
+    tree = KTree(3)
     tree.root = KTreeNode(3,1)
     second_level = [KTreeNode(3,2),KTreeNode(3,3),KTreeNode(3,4)]
     third_level_left = [KTreeNode(3,5),KTreeNode(3,6),KTreeNode(3,7)]
@@ -20,7 +20,7 @@ def test_breadth_first():
     assert actual == expected
 
 def test_create_binary():
-    tree = KAryTree(2)
+    tree = KTree(2)
     tree.add(1)
     tree.add(2)
     tree.add(3)

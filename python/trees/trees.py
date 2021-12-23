@@ -43,7 +43,7 @@ class KTreeNode():
                 raise IndexError(f'Length of connections: {connections} cannot be greater than k: {k}')
             self.value = value
 
-class KAryTree():
+class KTree():
     def __init__(self,k:int,root = None) -> None:
             self.k = k
             if root is None:
