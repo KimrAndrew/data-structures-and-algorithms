@@ -53,30 +53,6 @@ class KAryTree():
             else:
                 self.root = root
         
-    # def add(self, value):
-    #     if not isinstance(value,KTreeNode):
-    #         value = KTreeNode(self.k,value)
-    #     if self.root is None:
-    #         self.root = value
-    #         return
-
-    #     def add_to_left(root:KTreeNode,to_add = value):
-    #         if len(root.connections)  < self.k:
-    #             root.connections.append(to_add)
-    #         add_to_left(root.connections[0],to_add)
-
-    #     def find_open_spot(root:KTreeNode,to_add = value):
-    #         if len(root.connections) < self.k:
-    #             print(len(root.connections))
-    #             print('to_add', to_add.value)
-    #             root.connections.append(to_add)
-    #             print([connection.value for connection in root.connections])
-    #             return True
-    #         for node in root.connections:
-    #             find_open_spot(node,to_add)
-
-    #     find_open_spot(self.root)
-    #def add(tree:KAryTree):
     def add(self,to_add) -> None:
         q = deque()
         if self.root is None:
@@ -87,8 +63,6 @@ class KAryTree():
         while len(q) > 0:
             temp = q.pop()
             if len(temp.connections) < self.k:
-                #print(temp.value)
-                #print(temp.connections)
                 temp.connections.append(KTreeNode(self.k,to_add))
                 return
             for connection in temp.connections:
