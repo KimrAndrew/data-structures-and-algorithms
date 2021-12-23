@@ -1,37 +1,5 @@
 from trees.trees import KAryTree, KTreeNode
 
-# def test_tree_add():
-#     tree = KAryTree(3)
-#     tree.add(1)
-#     tree.add(2)
-#     tree.add(3)
-#     tree.add(4)
-#     second_level_left = tree.root.connections[0]
-#     second_level_mid = tree.root.connections[1]
-#     second_level_right = tree.root.connections[2]
-#     tree.add(5)
-#     tree.add(6)
-#     tree.add(7)
-#     tree.add(8)
-#     # tree.add(9)
-#     # tree.add(10)
-#     # tree.add(11)
-#     # tree.add(12)
-#     # tree.add(13)
-#     assert tree.root.value == 1
-#     assert tree.root.connections[0].value == 2
-#     assert tree.root.connections[1].value == 3
-#     assert tree.root.connections[2].value == 4
-#     assert second_level_left.connections[0].value == 5
-#     assert second_level_left.connections[1].value == 6
-#     assert second_level_left.connections[2].value == 7
-#     assert second_level_mid.connections[0].value == 8
-#     # assert second_level_mid.connections[1].value == 9
-#     # assert second_level_mid.connections[2].value == 10
-#     # assert second_level_right.connections[0].value == 11
-#     # assert second_level_right.connections[1].value == 12
-#     # assert second_level_right.connections[2].value == 13
-
 def test_breadth_first():
     tree = KAryTree(3)
     tree.root = KTreeNode(3,1)
