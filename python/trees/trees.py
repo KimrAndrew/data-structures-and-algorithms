@@ -81,16 +81,34 @@ class KAryTree():
         q = deque()
         if self.root is None:
             self.root = KTreeNode(self.k, to_add)
+            return
         q.appendleft(self.root)
         temp = None
         while len(q) > 0:
             temp = q.pop()
             if len(temp.connections) < self.k:
-                print(temp.value)
-                print(temp.connections)
+                #print(temp.value)
+                #print(temp.connections)
                 temp.connections.append(KTreeNode(self.k,to_add))
                 return
             for connection in temp.connections:
                 q.appendleft(connection)
-        
-        return
+
+    def breadth_first_to_list(self) -> list:
+        q = deque()
+        output = []
+
+        if self.root is None:
+            return output
+
+        q.appendleft(self.root)
+
+        while len(q) > 0:
+            temp = q.pop()
+
+            for connection in temp.connections:
+                q.appendleft(connection)
+                
+            output.append(temp.value)
+
+        return output
