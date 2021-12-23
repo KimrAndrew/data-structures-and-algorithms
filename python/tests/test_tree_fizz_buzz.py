@@ -43,10 +43,11 @@ def test_breadth_first():
     tree.root.connections[0].connections = third_level_left
     tree.root.connections[1].connections =  third_level_mid
     tree.root.connections[2].connections = third_level_right
-    tree.breadth_first(12)
+    tree.add(12)
     actual = tree.root.connections[0].connections[0].connections[0].value
     expected = 12
     #print([connection.value for connection in tree.root.connections[0].connections])
     #print(tree.root.connections[0].connections[0].connections[0].value)
     #print(actual)
     assert actual == expected
+

@@ -77,7 +77,7 @@ class KAryTree():
 
     #     find_open_spot(self.root)
     #def add(tree:KAryTree):
-    def breadth_first(self,to_add) -> None:
+    def add(self,to_add) -> None:
         q = deque()
         if self.root is None:
             self.root = KTreeNode(self.k, to_add)
