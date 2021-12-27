@@ -35,6 +35,52 @@ class BinaryTree():
         walk(self.root)
         return output
 
+class BST(BinaryTree):
+    
+    def add(self,value):
+        def walk(root,value):
+            if root.value > value:
+                if root.left is not None:
+                    walk(root.left,value)
+                else:
+                    root.left = BTreeNode(value)
+                    return
+            if root.value <= value:
+                if root.right is not None:
+                    walk(root.right,value)
+                else:
+                    root.right = BTreeNode(value)
+                    return
+
+        if self.root is None:
+            self.root = BTreeNode(value)
+        else:
+            walk(self.root,value)
+
+    def contains(self,value):
+        flag = False
+        def walk(root,value):
+            nonlocal flag
+            if value < root.value:
+                if root.left is None:
+                    return
+                if root.left.value == value:
+                    flag = True
+                walk(root.left,value)
+            else:
+                if root.right is None:
+                    return
+                if root.right.value == value:
+                    flag = True
+                    return
+                walk(root.right,value)
+        walk(self.root,value)
+        return flag
+            
+
+
+        
+
 class KTreeNode():
 
     def __init__(self,k:int,value,connections:Collection=[]) -> None:
