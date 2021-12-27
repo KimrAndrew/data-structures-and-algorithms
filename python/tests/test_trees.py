@@ -65,7 +65,11 @@ def test_bst_add_several():
 
 def test_contains_true(bst_h_3):
     tree = bst_h_3
-    assert tree.root
+    assert tree.contains(3)
+
+def test_bst_contains_false(bst_h_3):
+    tree = bst_h_3
+    assert not tree.contains(1)
 
 
 
