@@ -9,6 +9,10 @@ class LinkedList():
         self.head = None
 
     def get(self,key):
+        """
+        Returns Node if key exists
+        Returns None if key does not exist
+        """
         current = self.head
         while current is not None:
             if current.key == key:
@@ -62,3 +66,10 @@ class HashTable():
         if self.storage[index] is None:
             raise ValueError('Key Does Not Exist')
         return self.storage[index].get(key)
+
+    def contains(self,key:str):
+        index = self.hash(key)
+        if self.storage[index].get(key):
+            return True
+        return False
+        

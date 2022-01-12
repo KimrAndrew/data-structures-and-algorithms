@@ -48,3 +48,11 @@ def test_hash_get():
     hash.add('Cta','Cta_val')
     assert hash.get('Cat').value == 'Cat_val'
     assert hash.get('Cta').value == 'Cta_val'
+
+def test_hash_contains():
+    hash = HashTable()
+    hash.add('Cat','Cat_val')
+    hash.add('Cta','Cta_val')
+    assert hash.contains('Cta')
+    assert hash.contains('Cat')
+    assert not hash.contains('atC')
