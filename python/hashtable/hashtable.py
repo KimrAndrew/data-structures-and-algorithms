@@ -51,7 +51,14 @@ class HashTable():
             self.storage[index] = LinkedList()
         node_at_key = self.storage[index].get('key')
         # Check if key already exists
+        # TODO: make this bit work ¯\_(ツ)_/¯
         if node_at_key is not None:
             node_at_key.value = value
             return
         self.storage[index].add(key,value)
+
+    def get(self,key:str):
+        index = self.hash(key)
+        if self.storage[index] is None:
+            raise ValueError('Key Does Not Exist')
+        return self.storage[index].get(key)

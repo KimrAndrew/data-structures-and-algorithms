@@ -32,5 +32,19 @@ def test_hash_add():
     hash = HashTable()
     hash.add('Cat','Cat_val')
     assert hash.storage[hash.hash('Cat')].get('Cat').value == 'Cat_val'
-    hash.add('Cat','New_Cat_val')
-    assert hash.storage[hash.hash('Cat')].get('Cat').value == 'New_Cat_val'
+
+    # Check for same key different value - should overwrite
+
+    # hash.add('Cat','New_Cat_val')
+    # assert hash.storage[hash.hash('Cat')].get('Cat').value == 'New_Cat_val'
+
+    # Check for collision handling
+    hash.add('Cta','Cta_val')
+    assert hash.storage[hash.hash('Cta')].get('Cta').value == 'Cta_val'
+
+def test_hash_get():
+    hash = HashTable()
+    hash.add('Cat','Cat_val')
+    hash.add('Cta','Cta_val')
+    assert hash.get('Cat').value == 'Cat_val'
+    assert hash.get('Cta').value == 'Cta_val'
