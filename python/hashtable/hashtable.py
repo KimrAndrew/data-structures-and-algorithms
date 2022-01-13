@@ -1,3 +1,5 @@
+import re
+
 class Node():
     def __init__(self,key,value):
         self.key = key
@@ -71,4 +73,13 @@ class HashTable():
         if self.storage[index].get(key):
             return True
         return False
-        
+    def repeated_word(self,string:str):
+        string.lower()
+        # Get list of all words with punctuation stripped
+        words = re.findall(r'\w*')
+        for word in words:
+            try:
+                self.add(word)
+            except(KeyError):
+                return word
+        return ''
