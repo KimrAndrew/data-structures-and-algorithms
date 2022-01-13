@@ -75,12 +75,13 @@ class HashTable():
         return False
 
     def repeated_word(self,string:str):
-        string.lower()
+        string = string.lower()
         # Get list of all words with punctuation stripped
-        words = re.findall(r'\w*')
+        words = re.findall(r'[a-z]+',string)
+        print(words)
         for word in words:
             try:
-                self.add(word)
+                self.add(word,word)
             except(KeyError):
                 return word
         return ''
