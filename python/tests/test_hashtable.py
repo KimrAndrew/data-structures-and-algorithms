@@ -32,15 +32,14 @@ def test_hash_add():
     hash = HashTable()
     hash.add('Cat','Cat_val')
     assert hash.storage[hash.hash('Cat')].get('Cat').value == 'Cat_val'
-
-    # Check for same key different value - should overwrite
-
-    # hash.add('Cat','New_Cat_val')
-    # assert hash.storage[hash.hash('Cat')].get('Cat').value == 'New_Cat_val'
-
-    # Check for collision handling
     hash.add('Cta','Cta_val')
     assert hash.storage[hash.hash('Cta')].get('Cta').value == 'Cta_val'
+
+def test_hash_add_same_key():
+    hash = HashTable()
+    hash.add('Cat', 'Cat_val')
+    with pytest.raises(KeyError):
+        hash.add('Cat','Hopefully an exception')
 
 def test_hash_get():
     hash = HashTable()

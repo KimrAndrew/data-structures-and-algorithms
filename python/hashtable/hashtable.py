@@ -53,12 +53,11 @@ class HashTable():
         index = self.hash(key)
         if self.storage[index] is None:
             self.storage[index] = LinkedList()
-        node_at_key = self.storage[index].get('key')
-        # Check if key already exists
-        # TODO: make this bit work ¯\_(ツ)_/¯
-        if node_at_key is not None:
-            node_at_key.value = value
-            return
+
+        #Raises key error if key already exists in hashmap
+        if self.storage[index].get(key):
+            raise KeyError(f'Value already stored at key:{key}')
+        
         self.storage[index].add(key,value)
 
     def get(self,key:str):
