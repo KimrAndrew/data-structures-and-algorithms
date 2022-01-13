@@ -63,3 +63,6 @@ def test_hash_repeated_word():
     hash_two = HashTable()
     repeat = hash_two.repeated_word("Once upon a time, there was a brave princess who...")
     assert repeat == 'a'
+    hash_three = HashTable()
+    repeat = hash_three.repeated_word("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...")
+    assert repeat == 'summer'
