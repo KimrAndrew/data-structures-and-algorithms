@@ -65,7 +65,7 @@ class HashTable():
     def get(self,key:str):
         index = self.hash(key)
         if self.storage[index] is None:
-            raise ValueError('Key Does Not Exist')
+            raise ValueError(f'Key Does Not Exist at key: {key}')
         return self.storage[index].get(key)
 
     def contains(self,key:str):
@@ -73,6 +73,7 @@ class HashTable():
         if self.storage[index].get(key):
             return True
         return False
+
     def repeated_word(self,string:str):
         string.lower()
         # Get list of all words with punctuation stripped
