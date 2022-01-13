@@ -1,3 +1,5 @@
+import re
+
 class Node():
     def __init__(self,key,value):
         self.key = key
@@ -53,18 +55,17 @@ class HashTable():
         index = self.hash(key)
         if self.storage[index] is None:
             self.storage[index] = LinkedList()
-        node_at_key = self.storage[index].get('key')
-        # Check if key already exists
-        # TODO: make this bit work ¯\_(ツ)_/¯
-        if node_at_key is not None:
-            node_at_key.value = value
-            return
+
+        #Raises key error if key already exists in hashmap
+        if self.storage[index].get(key):
+            raise KeyError(f'Value already stored at key:{key}')
+        
         self.storage[index].add(key,value)
 
     def get(self,key:str):
         index = self.hash(key)
         if self.storage[index] is None:
-            raise ValueError('Key Does Not Exist')
+            raise ValueError(f'Key Does Not Exist at key: {key}')
         return self.storage[index].get(key)
 
     def contains(self,key:str):
@@ -72,4 +73,15 @@ class HashTable():
         if self.storage[index].get(key):
             return True
         return False
-        
+
+    def repeated_word(self,string:str):
+        string = string.lower()
+        # Get list of all words with punctuation stripped
+        words = re.findall(r'[a-z]+',string)
+        print(words)
+        for word in words:
+            try:
+                self.add(word,word)
+            except(KeyError):
+                return word
+        return ''
