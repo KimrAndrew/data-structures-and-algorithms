@@ -1,3 +1,4 @@
+from modulefinder import STORE_NAME
 import re
 
 class Node():
@@ -85,3 +86,10 @@ class HashTable():
             except(KeyError):
                 return word
         return ''
+
+    def get_values(self):
+        stored_values = []
+        for bucket in range(len(self.storage)):
+            if self.storage[bucket] is not None:
+                stored_values.append(self.storage[bucket])
+        return stored_values

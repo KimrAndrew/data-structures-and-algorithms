@@ -72,7 +72,6 @@ def test_hash_get_values_on_empty():
     vals = hash.get_values()
     assert vals == []
 
-@pytest.mark.skip()
 def test_hash_get_values_non_empty():
     hash = HashTable()
     hash.add('Cat','Cat_one')
