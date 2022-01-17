@@ -8,7 +8,6 @@ def test_left_join_empty():
     joined_tables = left_join(left_table,right_table)
     assert joined_tables == []
 
-@pytest.mark.skip
 def test_left_join_only_left_empty():
     left = HashTable()
     right = HashTable()
@@ -16,7 +15,7 @@ def test_left_join_only_left_empty():
     joined_tables = left_join(left,right)
     assert joined_tables == []
 
-@pytest.mark.skip
+
 def test_left_join_identical_keys():
     left = HashTable()
     right = HashTable()
