@@ -1,3 +1,4 @@
+from modulefinder import STORE_NAME
 import re
 
 class Node():
@@ -70,6 +71,8 @@ class HashTable():
 
     def contains(self,key:str):
         index = self.hash(key)
+        if self.storage[index] is None:
+            return False
         if self.storage[index].get(key):
             return True
         return False
@@ -85,3 +88,16 @@ class HashTable():
             except(KeyError):
                 return word
         return ''
+
+    def get_values(self):
+        stored_values = []
+        for bucket in range(len(self.storage)):
+            if self.storage[bucket] is not None:
+                current = self.storage[bucket].head
+                while current is not None:
+                    stored_value = [None,None]
+                    stored_value[0] = current.key
+                    stored_value[1] = current.value
+                    stored_values.append(stored_value)
+                    current = current.next
+        return stored_values

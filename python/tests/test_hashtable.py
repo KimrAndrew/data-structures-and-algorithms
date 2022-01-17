@@ -48,13 +48,18 @@ def test_hash_get():
     assert hash.get('Cat').value == 'Cat_val'
     assert hash.get('Cta').value == 'Cta_val'
 
-def test_hash_contains():
+def test_hash_contains_with_collisions():
     hash = HashTable()
     hash.add('Cat','Cat_val')
     hash.add('Cta','Cta_val')
     assert hash.contains('Cta')
     assert hash.contains('Cat')
     assert not hash.contains('atC')
+
+def test_hash_contains_false():
+    hash = HashTable()
+    hash.add('Dog','Dog_val')
+    assert not hash.contains('Cat')
 
 def test_hash_repeated_word():
     hash_one = HashTable()
@@ -66,3 +71,25 @@ def test_hash_repeated_word():
     hash_three = HashTable()
     repeat = hash_three.repeated_word("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...")
     assert repeat == 'summer'
+
+def test_hash_get_values_on_empty():
+    hash = HashTable()
+    vals = hash.get_values()
+    assert vals == []
+
+def test_hash_get_values_non_empty():
+    hash = HashTable()
+    hash.add('Cat','Cat_one')
+    hash.add('Dog','Dog_one')
+    hash.add('Fish','Fish_one')
+    vals = hash.get_values()
+    assert vals == [['Fish','Fish_one'],['Cat','Cat_one'],['Dog','Dog_one']]
+
+
+def test_hash_get_values_with_collisions():
+    hash = HashTable()
+    hash.add('Cat','Cat_one')
+    hash.add('Cta','Cat_two')
+    hash.add('Dog','Dog_one')
+    vals = hash.get_values()
+    assert vals == [['Cat','Cat_one'],['Cta','Cat_two'],['Dog','Dog_one']]
