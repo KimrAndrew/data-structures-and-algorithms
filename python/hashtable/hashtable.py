@@ -71,6 +71,8 @@ class HashTable():
 
     def contains(self,key:str):
         index = self.hash(key)
+        if self.storage[index] is None:
+            return False
         if self.storage[index].get(key):
             return True
         return False
