@@ -33,7 +33,6 @@ def test_left_join_right_has_nulls():
     joined = left_join(left,right)
     assert joined == [['Cat','left',None]]
 
-@pytest.mark.skip
 def test_left_join_collisions():
     left = HashTable()
     right = HashTable()
