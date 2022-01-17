@@ -26,7 +26,6 @@ def test_left_join_identical_keys():
     joined = left_join(left,right)
     assert joined == [['Cat','left','right'],['Dog','left','right']]
 
-@pytest.mark.skip
 def test_left_join_right_has_nulls():
     left = HashTable()
     right = HashTable()
