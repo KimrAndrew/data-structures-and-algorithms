@@ -91,5 +91,8 @@ class HashTable():
         stored_values = []
         for bucket in range(len(self.storage)):
             if self.storage[bucket] is not None:
-                stored_values.append(self.storage[bucket])
+                stored_value = [None,None]
+                stored_value[0] = self.storage[bucket].head.key
+                stored_value[1] = self.storage[bucket].head.value
+                stored_values.append(stored_value)
         return stored_values

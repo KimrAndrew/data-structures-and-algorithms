@@ -78,7 +78,7 @@ def test_hash_get_values_non_empty():
     hash.add('Dog','Dog_one')
     hash.add('Fish','Fish_one')
     vals = hash.get_values()
-    assert vals == [['Cat','Cat_one'],['Dog','Dog_one'],['Fish','Fish_one']]
+    assert vals == [['Fish','Fish_one'],['Cat','Cat_one'],['Dog','Dog_one']]
 
 @pytest.mark.skip()
 def test_hash_get_values_with_collisions():
