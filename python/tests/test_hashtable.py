@@ -66,3 +66,26 @@ def test_hash_repeated_word():
     hash_three = HashTable()
     repeat = hash_three.repeated_word("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...")
     assert repeat == 'summer'
+
+def test_hash_get_values_on_empty():
+    hash = HashTable()
+    vals = hash.get_values()
+    assert vals == []
+
+@pytest.mark.skip()
+def test_hash_get_values_non_empty():
+    hash = HashTable()
+    hash.add('Cat','Cat_one')
+    hash.add('Dog','Dog_one')
+    hash.add('Fish','Fish_one')
+    vals = hash.get_values()
+    assert vals == [['Cat','Cat_one'],['Dog','Dog_one'],['Fish','Fish_one']]
+
+@pytest.mark.skip()
+def test_hash_get_values_with_collisions():
+    hash = HashTable()
+    hash.add('Cat','Cat_one')
+    hash.add('Cta','Cat_two')
+    hash.add('Dog','Dog_one')
+    vals = hash.get_values()
+    assert vals == [['Cat','Cat_one'],['Cta','Cat_two'],['Dog','Dog_one']]
