@@ -8,7 +8,12 @@ class Graph():
         return len(self.vertices)
 
     def add_node(self,val):
-        self.vertices[Vertex(val)] = deque()
+        vertex_to_add = Vertex(val)
+        self.vertices[vertex_to_add] = deque()
+        return vertex_to_add
+
+    def get_nodes(self):
+        return list(self.vertices.keys())
 
 class Vertex():
     def __init__(self,value):
