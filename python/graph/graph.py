@@ -18,6 +18,9 @@ class Graph():
     def add_edge(self,v_one,v_two,weight=None):
         self.vertices[v_one].append([v_two,weight])
 
+    def get_neighbors(self,vertex):
+        return list(self.vertices[vertex])
+
 class Vertex():
     def __init__(self,value):
         self.value = value
