@@ -52,3 +52,17 @@ def test_add_edge_nosy():
     assert [c,2] in g.vertices[a]
     assert [a,5] in g.vertices[b]
     assert [a,10] in g.vertices[c]
+
+def test_get_neighbors():
+    g = Graph()
+    a = g.add_node('A')
+    b = g.add_node('B')
+    c = g.add_node('C')
+    g.add_edge(a,b,5)
+    g.add_edge(a,c,2)
+    g.add_edge(b,a,5)
+    g.add_edge(c,a,10)
+
+    assert g.get_neighbors(a) == [[b,5],[c,2]]
+    assert g.get_neighbors(b) == [[a,5]]
+    assert g.get_neighbors(c) == [[a,10]]
