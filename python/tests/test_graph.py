@@ -23,7 +23,7 @@ def test_size_empty():
     g = Graph()
     assert g.size() == 0
 
-def test_add_edge_no_weight():
+def test_add_edge_no_weight_nosy():
     g = Graph()
     a = g.add_node('A')
     b = g.add_node('B')
@@ -32,3 +32,10 @@ def test_add_edge_no_weight():
     g.add_edge(a,c)
     g.add_edge(b,a)
     g.add_edge(c,a)
+    
+    assert [b,None] in g.vertices[a]
+    assert [c,None] in g.vertices[a]
+    assert [a,None] in g.vertices[b]
+    assert [a,None] in g.vertices[c]
+
+#def test_add_edge():
