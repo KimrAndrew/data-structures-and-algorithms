@@ -31,5 +31,4 @@ def test_add_edge_no_weight():
     g.add_edge(a,b)
     g.add_edge(a,c)
     g.add_edge(b,a)
-    c.add_edge(c,a)
-    
+    g.add_edge(c,a)

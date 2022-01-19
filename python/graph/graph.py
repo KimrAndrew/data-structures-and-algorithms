@@ -15,6 +15,9 @@ class Graph():
     def get_nodes(self):
         return list(self.vertices.keys())
 
+    def add_edge(self,v_one,v_two,weight=None):
+        self.vertices[v_one].append([v_two,weight])
+
 class Vertex():
     def __init__(self,value):
         self.value = value
