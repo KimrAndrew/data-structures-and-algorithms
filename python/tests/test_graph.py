@@ -66,3 +66,8 @@ def test_get_neighbors():
     assert g.get_neighbors(a) == [[b,5],[c,2]]
     assert g.get_neighbors(b) == [[a,5]]
     assert g.get_neighbors(c) == [[a,10]]
+
+def test_get_neighbors_no_edges():
+    g = Graph()
+    a = g.add_node('A')
+    assert g.get_neighbors(a) == []
